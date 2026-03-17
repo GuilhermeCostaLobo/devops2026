@@ -18,6 +18,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Testes unitários
         run: pytest
+  analise_estatica:
+    name: "Bandit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Instalando bandit
+        run: pip install bandit
+      - name: Análise estática
+        run: bandit -r .
   entrega:
     name: "Docker Hub"
     runs-on: ubuntu-latest
