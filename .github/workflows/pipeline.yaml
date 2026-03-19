@@ -33,6 +33,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Instalando safety
-        run: pip install safaty
+        run: pip install safety
       - name: Analise dinâmica
         run: safety scan
